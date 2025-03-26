@@ -2,12 +2,12 @@
 _A simple and powerful task management web app built with Django._
 
 ![image](https://github.com/user-attachments/assets/d00da368-0df7-4e54-bd4d-375c9fead0b0)
-[image](https://github.com/user-attachments/assets/51248303-51ee-48ea-b75e-e2442ed8a304)
-![image](https://github.com/user-attachments/assets/50058f90-f73d-4417-b78b-520cae6b20aa)
-![image](https://github.com/user-attachments/assets/41a22925-ba35-431b-843a-6ae1959462b1)
-![image](https://github.com/user-attachments/assets/a0fe2253-559f-4a0e-b89d-d6d7097b534f
-![image](https://github.com/user-attachments/assets/963944b7-9b6b-4c4c-aefa-7040a65c9c64)
-![image](https://github.com/user-attachments/assets/7e411993-77fd-496b-a47e-f8a7b37855e8)
+![image](https://github.com/user-attachments/assets/2fb40add-0e7a-4f6d-8fe3-0592a19c6178)
+![image](https://github.com/user-attachments/assets/ac74c12e-ad81-41f6-8d58-efa2882a8149)
+![image](https://github.com/user-attachments/assets/db5449aa-7400-480e-a630-d451b56c4404)
+![image](https://github.com/user-attachments/assets/15a24870-6048-4ec1-a9db-79647b27f561)
+![image](https://github.com/user-attachments/assets/d2c51f94-4b5d-4e64-8116-c4ffc0bd0cba)
+![image](https://github.com/user-attachments/assets/1c962cea-991b-4d54-a1d7-c34afc0a47f3)
  <!-- Replace with an actual image link -->
 
 ## **🚀 Features**
@@ -53,12 +53,6 @@ cd taskmate
   - 📜 **API for Quotes** to provide daily motivation  
   - 🌗 **Dark Mode** for better user experience  
 
-![image](https://github.com/user-attachments/assets/51248303-51ee-48ea-b75e-e2442ed8a304)
-![image](https://github.com/user-attachments/assets/50058f90-f73d-4417-b78b-520cae6b20aa)
-![image](https://github.com/user-attachments/assets/41a22925-ba35-431b-843a-6ae1959462b1)
-![image](https://github.com/user-attachments/assets/a0fe2253-559f-4a0e-b89d-d6d7097b534f
-![image](https://github.com/user-attachments/assets/963944b7-9b6b-4c4c-aefa-7040a65c9c64)
-![image](https://github.com/user-attachments/assets/7e411993-77fd-496b-a47e-f8a7b37855e8)
 
 
 
