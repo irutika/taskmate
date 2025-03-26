@@ -15,11 +15,22 @@ _A simple and powerful task management web app built with Django._
 
 ---
 
-## **📂 Project Structure**
-taskmate/ │── taskmate/ # Main project folder │ ├── settings.py # Django settings (includes Dark Mode support) │ ├── urls.py # Project URL configurations │── tasks/ # Your Django app │ ├── models.py # Database models (Task Model) │ ├── views.py # Logic for handling tasks │ ├── urls.py # App-specific URL configurations │ ├── templates/ # HTML templates (Dashboard, Calendar, Quotes, etc.) │── static/ # CSS, JS, and images │── db.sqlite3 # SQLite database │── manage.py # Django CLI tool │── requirements.txt # Dependencies
-
-
----
+## 📂 Project Structure
+taskmate/
+│── taskmate/ # Main project folder
+│ ├── settings.py # Django settings (includes Dark Mode support)
+│ ├── urls.py # Project URL configurations
+│
+│── tasks/ # Your Django app
+│ ├── models.py # Database models (Task Model)
+│ ├── views.py # Logic for handling tasks
+│ ├── urls.py # App-specific URL configurations
+│ ├── templates/ # HTML templates (Dashboard, Calendar, Quotes, etc.)
+│
+│── static/ # CSS, JS, and images
+│── db.sqlite3 # SQLite database
+│── manage.py # Django CLI tool
+│── requirements.txt # Dependencies
 
 ## **⚙️ Installation & Setup**
 ### **1️⃣ Clone the repository**
@@ -32,7 +43,9 @@ cd taskmate
 - **Frontend:** HTML, CSS, JavaScript  
 - **Database:** SQLite  
 - **Features:** FullCalendar.js, API for Quotes, Dark Mode  
-- **Deployment:** _(to be added: PythonAnywhere/Heroku/etc.)_
+- **Deployment:** _(to be added: PythonAnywhere/Heroku/etc.)
+
+---
 
 ![image](https://github.com/user-attachments/assets/51248303-51ee-48ea-b75e-e2442ed8a304)
 
