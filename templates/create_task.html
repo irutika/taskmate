@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load custom_filters %}
+
+{% block title %}Create New Task - Task Mate{% endblock %}
+
+{% block content %}
+<div class="col-md-9 col-lg-10">
+    <div class="content-wrapper">
+        <h2 class="mb-4">Create New Task</h2>
+        <div class="form-container" style="max-width: 800px;">
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                
+                <div class="mb-4">
+                    <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
+                    {{ form.title|addclass:"form-control" }}
+                </div>
+
+                <div class="mb-4">
+                    <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+                    {{ form.description|addclass:"form-control" }}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <label for="{{ form.due_date.id_for_label }}" class="form-label">Due Date</label>
+                        {{ form.due_date|addclass:"form-control" }}
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <label for="{{ form.status.id_for_label }}" class="form-label">Status</label>
+                        {{ form.status|addclass:"form-control" }}
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="form-check">
+                            {{ form.reminder|addclass:"form-check-input" }}  
+                            <label for="{{ form.reminder.id_for_label }}" class="form-check-label">Set Reminder</label>
+                        </div>
+                    </div>
+                    
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary me-2">Done</button>
+                    <a href="{% url 'task_list' %}" class="btn btn-light">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

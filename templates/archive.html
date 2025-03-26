@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Archived Tasks{% endblock %}
+
+{% block content %}
+<div class="col-md-9 col-lg-10 px-0">
+    <div class="content-wrapper">
+        <h1>Archived Tasks</h1>
+        <a href="{% url 'task_list' %}" class="btn btn-primary">Back to Task List</a>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in archived_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td><span class="badge bg-success">{{ task.status }}</span></td>
+                    <td> <a href="{% url 'delete_task' task.id %}" class="btn btn-danger btn-sm">Delete</a> </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center">No completed tasks yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

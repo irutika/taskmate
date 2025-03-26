@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block title %}Dashboard - Task Mate{% endblock %}
+
+{% block dashboard_active %}active{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Welcome, {{ request.user.username }}!</h1>
+
+    <!-- Task Summary Cards -->
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="card text-center p-3 shadow-sm">
+                <h5>Total Tasks</h5>
+                <p class="fs-4 fw-bold">{{ total_tasks }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center p-3 shadow-sm">
+                <h5>Completed</h5>
+                <p class="fs-4 fw-bold text-success">{{ completed_tasks }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center p-3 shadow-sm">
+                <h5>Pending</h5>
+                <p class="fs-4 fw-bold text-warning">{{ pending_tasks }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="row mt-4">
+        <!-- Mini Calendar (Left - 50%) -->
+        <div class="col-md-6">
+            <div id="mini-calendar"></div>
+        </div>
+
+        <!-- Right Side: Images + Create Task Button -->
+        <div class="col-md-6 text-center">
+            <div class="task-image-container">
+                <img src="{% static 'images/task.jpg' %}" alt="Task Planning" class="img-fluid rounded shadow-sm">
+                <a href="{% url 'create_task' %}" class="btn btn-primary create-task-btn">
+                    <i class="fas fa-plus"></i> Create Task
+                </a>
+
+                <style>
+                    
+                    .create-task-btn {
+                        width: 100%;
+                        font-size: 16px;
+                        padding: 10px;
+                        border-radius: 8px;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FullCalendar Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('mini-calendar');
+
+        fetch("{% url 'task_api' %}")
+        .then(response => response.json())
+        .then(data => {
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 400,
+                headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek'
+                },
+                events: data,
+                eventClick: function(info) {
+                    alert(
+                        "Task: " + info.event.title + 
+                        "\nStatus: " + info.event.extendedProps.status + 
+                        "\nDescription: " + info.event.extendedProps.description
+                    );
+                }
+            });
+            calendar.render();
+        })
+        .catch(error => console.error('Error loading tasks:', error));
+    });
+</script>
+
+{% endblock %}
